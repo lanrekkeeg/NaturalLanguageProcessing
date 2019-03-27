@@ -1,13 +1,13 @@
 from Stemmingrules import rules as stemm
 
 def save_file(data):
-    with  open("C:\Users\Faisal Khan\.astah\Desktop\Semester-8\NLP\Assignments\Assignment-1\output.txt", 'r') as file:
+    with  open("output.txt", 'r') as file:
         for word in data:
             file.write(word + '\n')
 
 def load_file(file_name):
     data = []
-    with  open("C:\Users\Faisal Khan\.astah\Desktop\Semester-8\NLP\Assignments\Assignment-1\input.txt", 'r') as file:
+    with  open("input.txt", 'r') as file:
         for line in file:
             data.append(line.strip('\n|.|:|\(|\)').replace(' ',',').split(','))
     return data
@@ -16,7 +16,7 @@ if __name__ == '__main__':
 
 
     data = load_file("input.txt")
-    out = open("C:\Users\Faisal Khan\.astah\Desktop\Semester-8\NLP\Assignments\Assignment-1\output.txt", 'w')
+    out = open("output.txt", 'w')
     steps = stemm()
     vocab = totalwor = 0
     for word_list in data:
